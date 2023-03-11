@@ -20,9 +20,9 @@ export default function Welcome() {
       {/* <animated.div style={{ fontFamily: "Larsseit-ExtraBold" }}>
         Welcome to Project Buddy!
       </animated.div> */}
-      <div style={{ fontFamily: "Larsseit-ExtraBold" }}>
+      <animated.div style={{ fontFamily: "Larsseit-ExtraBold" }}>
         Welcome to Project Buddy!
-      </div>
+      </animated.div>
     </Box>
   );
 }

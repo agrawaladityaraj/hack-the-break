@@ -23,6 +23,6 @@
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-simply-carousel": "^8.5.4"
+    "react-swipeable-views": "^0.14.0"
   }
 }
