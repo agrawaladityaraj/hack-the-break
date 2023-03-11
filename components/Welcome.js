@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Container, Grid, Box, Typography } from "@mui/material";
+import { Container, Grid, Box, Typography, Button } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import axios from "axios";
 import { useSpring, animated, useTrail, a } from "@react-spring/web";
 import { createClient } from "@supabase/supabase-js";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import styles from "../styles/welcome.module.css";
 
@@ -28,6 +30,16 @@ const Trail = ({ open, children }) => {
   );
 };
 
+const MyButton = styled(Button)({
+  backgroundColor: "#52796F",
+  border: "3px solid black",
+  borderRadius: "8px",
+  "&:hover": {
+    backgroundColor: "#ef8354",
+    border: "3px solid black",
+  },
+});
+
 export default function Welcome() {
   const [props, api] = useSpring(
     () => ({
@@ -43,6 +55,13 @@ export default function Welcome() {
         <span>Welcome to</span>
         <span className={styles.major}>Project</span>
         <span className={styles.major}>Buddy</span>
+        <MyButton
+          variant="contained"
+          endIcon={<ArrowForwardIosIcon />}
+          disableElevation
+        >
+          Get Started
+        </MyButton>
       </Trail>
     </div>
   );
