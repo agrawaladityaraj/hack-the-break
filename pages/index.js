@@ -54,7 +54,10 @@ export default function Home() {
           goPrev={() => setSlide(1)}
           goNext={() => {
             if (!idea.value) {
-              setIdea({ ...idea, error: "Idea cannot be empty!" });
+              setIdea({
+                ...idea,
+                error: "I said no funny business, idea cannot be empty!",
+              });
             } else {
               setSlide(3);
             }
