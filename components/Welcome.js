@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-// import { createClient } from "@supabase/supabase-js";
 import { Stack, Box } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { TypeAnimation } from "react-type-animation";
@@ -10,7 +9,6 @@ import { MyButton } from "./MyButton";
 
 import styles from "../styles/pages.module.css";
 import dog from "../assets/images/Untitled_Artwork.png";
-// const supabase = createClient(process.env.BACKEND_URL, process.env.API_KEY);
 
 export default function Welcome({ goNext, slide }) {
   const [visited, setVisited] = useState(false);

@@ -25,7 +25,7 @@ export default function Name({ goPrev, goNext, slide, name, setName }) {
           open={slide == 1}
           firstImage={jayden1}
           secondImage={jayden2}
-          timing={9700}
+          timing={10000}
           error={name.error ? true : false}
           errorJayden={errorJayden}
         />

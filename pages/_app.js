@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   createTheme,
   responsiveFontSizes,
@@ -5,6 +6,8 @@ import {
 } from "@mui/material/styles";
 import { CssBaseline, Box } from "@mui/material";
 import "@/styles/globals.css";
+import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { SessionContextProvider } from "@supabase/auth-helpers-react";
 
 let theme = createTheme({
   typography: {
@@ -14,10 +17,13 @@ let theme = createTheme({
 theme = responsiveFontSizes(theme);
 
 export default function App({ Component, pageProps }) {
+  const [supabaseClient] = useState(() => createBrowserSupabaseClient());
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <SessionContextProvider supabaseClient={supabaseClient}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </SessionContextProvider>
   );
 }

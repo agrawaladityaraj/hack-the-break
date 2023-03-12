@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import SwipeableViews from "react-swipeable-views";
+import { createClient } from "@supabase/supabase-js";
 
 import Welcome from "../components/Welcome";
 import Name from "../components/Name";
@@ -9,7 +11,10 @@ import Outline from "../components/Outline";
 import TechSack from "../components/TechStack";
 import Overview from "../components/Overview";
 
+const supabase = createClient(process.env.BACKEND_URL, process.env.API_KEY);
+
 export default function Home() {
+  const router = useRouter();
   const [slide, setSlide] = useState(0);
   const [name, setName] = useState({ value: "", error: "" });
   const [idea, setIdea] = useState({ value: "", error: "" });
@@ -18,6 +23,22 @@ export default function Home() {
     error: "",
   });
   const [technologies, setTechnologies] = useState({ value: [], error: "" });
+
+  const submitProject = async () => {
+    try {
+      await supabase.from("projects").insert([
+        {
+          name: name.value,
+          idea: idea.value,
+          outline: outline.value,
+          technologies: technologies.value,
+        },
+      ]);
+      router.push("/projects");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -100,7 +121,7 @@ export default function Home() {
         />
         <Overview
           goPrev={() => setSlide(4)}
-          goNext={() => {}}
+          goNext={submitProject}
           slide={slide}
           name={name.value}
           idea={idea.value}
