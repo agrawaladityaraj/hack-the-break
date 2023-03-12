@@ -7,6 +7,5 @@ export const MyButton = styled(Button)({
   borderRadius: "8px",
   "&:hover": {
     backgroundColor: "#ef8354",
-    border: "3px solid black",
   },
 });

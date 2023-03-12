@@ -78,8 +78,11 @@ export default function Home() {
         <TechSack
           goPrev={() => setSlide(3)}
           goNext={() => {
-            if (!outline.value.length) {
-              setOutline({ ...outline, error: "You need atleast one stage!" });
+            if (!technologies.value.length) {
+              setTechnologies({
+                ...technologies,
+                error: "C'mon! You're gonna need atleast one technology!",
+              });
             } else {
               setSlide(5);
             }

@@ -15,7 +15,7 @@ const SelectItem = forwardRef(({ image, label, ...others }, ref) => (
   </div>
 ));
 
-export default function MySelect({ data, setData, addTechnology }) {
+export default function MySelect({ data, addTechnology }) {
   return (
     <Select
       style={{ fontFamily: "Roboto Mono" }}
@@ -34,7 +34,6 @@ export default function MySelect({ data, setData, addTechnology }) {
       }
       value={""}
       onChange={(value) => {
-        setData(data.filter((item) => item.value != value));
         addTechnology(value);
       }}
     />
