@@ -7,7 +7,6 @@ import PrevNext from "./PrevNext";
 import JaydenPrompt from "./JaydenPrompt";
 import RTE from "./RTE";
 import { Trail } from "./Trail";
-import { MyTextField } from "./MyTextField";
 import { MyButton } from "./MyButton";
 import { Accordion, AccordionSummary } from "./MyAccordion";
 

@@ -6,6 +6,7 @@ import Welcome from "../components/Welcome";
 import Name from "../components/Name";
 import Idea from "../components/Idea";
 import Outline from "../components/Outline";
+import TechSack from "../components/TechStack";
 
 export default function Home() {
   const [slide, setSlide] = useState(0);
@@ -15,6 +16,7 @@ export default function Home() {
     value: [],
     error: "",
   });
+  const [technologies, setTechnologies] = useState({ value: [], error: "" });
 
   return (
     <>
@@ -72,6 +74,19 @@ export default function Home() {
           slide={slide}
           outline={outline}
           setOutline={setOutline}
+        />
+        <TechSack
+          goPrev={() => setSlide(3)}
+          goNext={() => {
+            if (!outline.value.length) {
+              setOutline({ ...outline, error: "You need atleast one stage!" });
+            } else {
+              setSlide(5);
+            }
+          }}
+          slide={slide}
+          technologies={technologies}
+          setTechnologies={setTechnologies}
         />
       </SwipeableViews>
     </>
