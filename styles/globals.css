@@ -98,3 +98,8 @@ body {
   font-family: "Roboto Mono";
   background-color: #fff4ec;
 }
+
+mark {
+  color: "white";
+  background-color: "#ef8354";
+}

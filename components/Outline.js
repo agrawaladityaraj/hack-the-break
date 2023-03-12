@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Stack, AccordionDetails, IconButton, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -51,6 +51,8 @@ export default function Outline({
   outline,
   setOutline,
 }) {
+  const [expanded, setExpanded] = useState(true);
+
   return (
     <div className={styles.container}>
       <div className={styles.verticalCentre}>
@@ -64,17 +66,28 @@ export default function Outline({
           open={slide == 3}
         />
         <Stack spacing={3} className={styles.textbox}>
-          <Accordion disableGutters elevation={0}>
-            <AccordionSummary>
-              <div>
-                <b>Stage 0</b>
-                <span> - Example</span>
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              <RTE content={content} setContent={(_) => {}} editable={false} />
-            </AccordionDetails>
-          </Accordion>
+          <Stack>
+            <Accordion
+              expanded={slide == 3 && expanded}
+              onClick={() => setExpanded(!expanded)}
+              disableGutters
+              elevation={0}
+            >
+              <AccordionSummary>
+                <div>
+                  <b>Stage 0</b>
+                  <span> - Example</span>
+                </div>
+              </AccordionSummary>
+              <AccordionDetails>
+                <RTE
+                  content={content}
+                  setContent={(_) => {}}
+                  editable={false}
+                />
+              </AccordionDetails>
+            </Accordion>
+          </Stack>
           {!outline.value.length && (
             <h4 style={{ textAlign: "center" }}>
               <b>
@@ -84,58 +97,59 @@ export default function Outline({
             </h4>
           )}
           <Stack>
-            {outline.value.map((item, index) => (
-              <Accordion disableGutters elevation={0} key={index}>
-                <AccordionSummary>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      width: "100%",
-                    }}
-                  >
-                    <b>{`Stage ${index + 1}`}</b>
-                    <IconButton
-                      style={{ color: "white" }}
-                      onClick={() => {
+            {slide == 3 &&
+              outline.value.map((item, index) => (
+                <Accordion disableGutters elevation={0} key={index}>
+                  <AccordionSummary>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        width: "100%",
+                      }}
+                    >
+                      <b>{`Stage ${index + 1}`}</b>
+                      <IconButton
+                        style={{ color: "white" }}
+                        onClick={() => {
+                          setOutline({
+                            ...outline,
+                            value: [
+                              ...outline.value.slice(0, index),
+                              ...outline.value.slice(
+                                index + 1,
+                                outline.value.length
+                              ),
+                            ],
+                          });
+                        }}
+                      >
+                        <DeleteIcon />
+                      </IconButton>
+                    </div>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <RTE
+                      content={item}
+                      setContent={(content) =>
                         setOutline({
                           ...outline,
                           value: [
                             ...outline.value.slice(0, index),
+                            content,
                             ...outline.value.slice(
                               index + 1,
                               outline.value.length
                             ),
                           ],
-                        });
-                      }}
-                    >
-                      <DeleteIcon />
-                    </IconButton>
-                  </div>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <RTE
-                    content={item}
-                    setContent={(content) =>
-                      setOutline({
-                        ...outline,
-                        value: [
-                          ...outline.value.slice(0, index),
-                          content,
-                          ...outline.value.slice(
-                            index + 1,
-                            outline.value.length
-                          ),
-                        ],
-                      })
-                    }
-                    editable={true}
-                  />
-                </AccordionDetails>
-              </Accordion>
-            ))}
+                        })
+                      }
+                      editable={true}
+                    />
+                  </AccordionDetails>
+                </Accordion>
+              ))}
           </Stack>
           <MyButton
             style={{ color: "white" }}

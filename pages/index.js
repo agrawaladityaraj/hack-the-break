@@ -92,7 +92,15 @@ export default function Home() {
           technologies={technologies}
           setTechnologies={setTechnologies}
         />
-        <Overview goPrev={() => setSlide(4)} goNext={() => {}} slide={slide} />
+        <Overview
+          goPrev={() => setSlide(4)}
+          goNext={() => {}}
+          slide={slide}
+          name={name.value}
+          idea={idea.value}
+          outline={outline.value}
+          technologies={technologies.value}
+        />
       </SwipeableViews>
     </>
   );

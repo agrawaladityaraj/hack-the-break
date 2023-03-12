@@ -17,4 +17,7 @@ export const Accordion = styled(MuiAccordion)({
 export const AccordionSummary = styled(MuiAccordionSummary)({
   backgroundColor: "#ef8354",
   color: "white",
+  "&:hover": {
+    backgroundColor: "#EF8F54",
+  },
 });
