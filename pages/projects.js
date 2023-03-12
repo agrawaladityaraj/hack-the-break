@@ -69,6 +69,27 @@ export default function Projects() {
                 </Stack>
               </Grid>
             ))}
+            <Grid item md={4} sm={6} xs={12}>
+              <Stack spacing={2}>
+                <Box
+                  component={Link}
+                  href="/"
+                  sx={{
+                    minHeight: 180,
+                    width: "100%",
+                    height: "100%",
+                    color: "#FFF4EC",
+                    backgroundColor: "#52796F",
+                    boxShadow: "10px 10px black",
+                    textDecoration: "none",
+                  }}
+                >
+                  <Typography variant="h4">
+                    <b style={{ textDecoration: "none" }}>Add Project</b>
+                  </Typography>
+                </Box>
+              </Stack>
+            </Grid>
           </Grid>
         )}
       </div>
