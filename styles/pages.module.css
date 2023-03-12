@@ -22,12 +22,14 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
+  margin: 2rem;
 }
 
 .verticalCentre {
   position: "absolute";
   top: 50%;
   margin: 0;
+  max-width: 1000px;
 }
 
 .major {
