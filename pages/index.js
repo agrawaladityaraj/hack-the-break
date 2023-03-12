@@ -7,6 +7,7 @@ import Name from "../components/Name";
 import Idea from "../components/Idea";
 import Outline from "../components/Outline";
 import TechSack from "../components/TechStack";
+import Overview from "../components/Overview";
 
 export default function Home() {
   const [slide, setSlide] = useState(0);
@@ -91,6 +92,7 @@ export default function Home() {
           technologies={technologies}
           setTechnologies={setTechnologies}
         />
+        <Overview goPrev={() => setSlide(4)} goNext={() => {}} slide={slide} />
       </SwipeableViews>
     </>
   );
