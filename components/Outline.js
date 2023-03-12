@@ -11,6 +11,8 @@ import { MyButton } from "./MyButton";
 import { Accordion, AccordionSummary } from "./MyAccordion";
 
 import styles from "../styles/pages.module.css";
+import jayden1 from "../assets/images/ThatsGoodTransparent.png";
+import jayden2 from "../assets/images/SmokingTransparent.png";
 
 const content = `<h1>The Woof Woof Stage</h1>
 <ol>
@@ -64,6 +66,9 @@ export default function Outline({
             "Ah okay, that works I guess. I’ve heard worse. What steps are you taking to complete this project? When you want to add a stage, press “Add stage”. When you’re done, hit “Next”!"
           }
           open={slide == 3}
+          firstImage={jayden1}
+          secondImage={jayden2}
+          timing={11200}
         />
         <Stack spacing={3} className={styles.textbox}>
           <Stack>
