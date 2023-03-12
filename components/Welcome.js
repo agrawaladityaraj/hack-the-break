@@ -38,16 +38,40 @@ export default function Welcome({ goNext, slide }) {
               justifyContent: "center",
               flexDirection: "column",
             }}
+            spacing={2}
           >
             <Image src={dog} alt="Dog" width={300} height={300} />
-            {visited && (
-              <TypeAnimation
-                style={{ padding: "2rem", fontSize: "1.5rem" }}
-                sequence={["Woof woof woof woof!"]}
-                wrapper={Box}
-                cursor
-              />
-            )}
+            <Stack
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+              spacing={1}
+            >
+              {visited && (
+                <TypeAnimation
+                  style={{ fontSize: "1.5rem" }}
+                  sequence={[`Woof woof woof woof!`]}
+                  wrapper={Box}
+                  cursor={false}
+                />
+              )}
+              {visited && (
+                <TypeAnimation
+                  style={{ fontSize: "1.5rem", color: "#ef8354" }}
+                  sequence={[
+                    2500,
+                    "(WARNING,",
+                    600,
+                    "(WARNING, DO NOT POKE HOPPA)",
+                  ]}
+                  wrapper={Box}
+                  cursor={false}
+                />
+              )}
+            </Stack>
           </Stack>
         </Stack>
         <MyButton

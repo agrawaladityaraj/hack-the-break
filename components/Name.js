@@ -20,7 +20,7 @@ export default function Name({ goPrev, goNext, slide, name, setName }) {
         </Trail>
         <JaydenPrompt
           text={
-            "My dog is so loud, sorry! Anyways, I like names! Names are fun and the first step to creating something beautiful, or ugly. Let’s come up with a name!"
+            "My dog is so loud, sorry! Anyways, my name is Hoppa. Names are fun and the first step to creating something beautiful, or ugly. Let’s come up with a name!"
           }
           open={slide == 1}
           firstImage={jayden1}
