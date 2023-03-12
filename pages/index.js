@@ -5,11 +5,13 @@ import SwipeableViews from "react-swipeable-views";
 import Welcome from "../components/Welcome";
 import Name from "../components/Name";
 import Idea from "../components/Idea";
+import Outline from "../components/Outline";
 
 export default function Home() {
   const [slide, setSlide] = useState(0);
   const [name, setName] = useState({ value: "", error: "" });
   const [idea, setIdea] = useState({ value: "", error: "" });
+  const [outline, setOutline] = useState({ value: [], error: "" });
 
   return (
     <>
@@ -54,6 +56,19 @@ export default function Home() {
           slide={slide}
           idea={idea}
           setIdea={setIdea}
+        />
+        <Outline
+          goPrev={() => setSlide(2)}
+          goNext={() => {
+            if (!outline.value.length) {
+              setOutline({ ...outline, error: "You need atleast one stage!" });
+            } else {
+              setSlide(4);
+            }
+          }}
+          slide={slide}
+          outline={outline}
+          setOutline={setOutline}
         />
       </SwipeableViews>
     </>
