@@ -20,9 +20,23 @@
   align-items: center;
   height: 100vh;
   justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.verticalCentre {
+  position: "absolute";
+  top: 50%;
+  margin: 0;
 }
 
 .major {
   color: #ef8354;
   -webkit-text-stroke: 2px black;
+}
+
+.textbox {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
 }
