@@ -9,26 +9,8 @@ import { MyChip } from "./MyChip";
 import { Trail } from "./Trail";
 
 import styles from "../styles/pages.module.css";
-
-import angular from "../assets/icons/angular.png";
-import assembly from "../assets/icons/Assembly.png";
-import cplusplus from "../assets/icons/cplusplus.png";
-import css from "../assets/icons/css.png";
-import django from "../assets/icons/django.png";
-import html from "../assets/icons/html.png";
-import java from "../assets/icons/java.png";
-import javascript from "../assets/icons/js.png";
-import node from "../assets/icons/node.png";
-import other from "../assets/icons/other.png";
-import python from "../assets/icons/python.png";
-import r from "../assets/icons/R.png";
-import react from "../assets/icons/reactjs.png";
-import ruby from "../assets/icons/ruby.png";
-import rust from "../assets/icons/rust.png";
-import sql from "../assets/icons/sql.png";
-import svelte from "../assets/icons/Svelte.png";
-import swift from "../assets/icons/swift.png";
-import typescript from "../assets/icons/typescript.png";
+import jayden1 from "../assets/images/SurprisedTransparent.png";
+import jayden2 from "../assets/images/ThatCouldWorkTransparent.png";
 
 const data = [
   {
@@ -145,6 +127,9 @@ export default function TechSack({
         <JaydenPrompt
           text={"What's your tech stack? You can search below!"}
           open={slide == 4}
+          firstImage={jayden1}
+          secondImage={jayden2}
+          timing={4000}
         />
         <Stack spacing={3} className={styles.textbox}>
           <Stack>
