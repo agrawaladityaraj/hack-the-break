@@ -7,8 +7,8 @@ import { Trail } from "./Trail";
 import { MyTextField } from "./MyTextField";
 
 import styles from "../styles/pages.module.css";
-import jayden1 from "../assets/images/SurprisedTransparent.png";
-import jayden2 from "../assets/images/WelcomeTransparent.png";
+import jayden1 from "../assets/images/WelcomeTransparent.png";
+import jayden2 from "../assets/images/Select2Transparent.png";
 
 export default function Name({ goPrev, goNext, slide, name, setName }) {
   return (
@@ -24,7 +24,7 @@ export default function Name({ goPrev, goNext, slide, name, setName }) {
           open={slide == 1}
           firstImage={jayden1}
           secondImage={jayden2}
-          timing={10000}
+          timing={9700}
         />
         <Stack className={styles.textbox}>
           <MyTextField
