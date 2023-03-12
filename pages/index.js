@@ -11,7 +11,10 @@ export default function Home() {
   const [slide, setSlide] = useState(0);
   const [name, setName] = useState({ value: "", error: "" });
   const [idea, setIdea] = useState({ value: "", error: "" });
-  const [outline, setOutline] = useState({ value: [], error: "" });
+  const [outline, setOutline] = useState({
+    value: [],
+    error: "",
+  });
 
   return (
     <>
