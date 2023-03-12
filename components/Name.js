@@ -7,6 +7,8 @@ import { Trail } from "./Trail";
 import { MyTextField } from "./MyTextField";
 
 import styles from "../styles/pages.module.css";
+import jayden1 from "../assets/images/SurprisedTransparent.png";
+import jayden2 from "../assets/images/WelcomeTransparent.png";
 
 export default function Name({ goPrev, goNext, slide, name, setName }) {
   return (
@@ -17,9 +19,12 @@ export default function Name({ goPrev, goNext, slide, name, setName }) {
         </Trail>
         <JaydenPrompt
           text={
-            "I like names! Names are fun and the first step to creating something beautiful, or ugly. Let’s come up with a name!"
+            "My dog is so loud, sorry! Anyways, I like names! Names are fun and the first step to creating something beautiful, or ugly. Let’s come up with a name!"
           }
           open={slide == 1}
+          firstImage={jayden1}
+          secondImage={jayden2}
+          timing={10000}
         />
         <Stack className={styles.textbox}>
           <MyTextField

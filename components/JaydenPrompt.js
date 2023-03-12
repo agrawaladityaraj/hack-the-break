@@ -3,14 +3,22 @@ import Image from "next/image";
 import { Box } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
 
-import jayden from "../assets/images/ThatCouldWorkTransparent.png";
-
-export default function JaydenPrompt({ text, open }) {
+export default function JaydenPrompt({
+  text,
+  open,
+  firstImage,
+  secondImage,
+  timing,
+}) {
   const [visited, setVisited] = useState(false);
+  const [first, setFirst] = useState(true);
 
   useEffect(() => {
     if (!visited && open) {
       setVisited(true);
+      setTimeout(() => {
+        setFirst(false);
+      }, timing);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
@@ -20,7 +28,12 @@ export default function JaydenPrompt({ text, open }) {
       sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
     >
       <Box sx={{ textAlign: "center" }}>
-        <Image src={jayden} alt="Jayden" height={400} width={400} />
+        <Image
+          src={first ? firstImage : secondImage}
+          alt="Jayden"
+          height={400}
+          width={400}
+        />
       </Box>
       {visited && (
         <TypeAnimation
