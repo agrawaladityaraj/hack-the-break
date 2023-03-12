@@ -9,6 +9,8 @@ export default function JaydenPrompt({
   firstImage,
   secondImage,
   timing,
+  error,
+  errorJayden,
 }) {
   const [visited, setVisited] = useState(false);
   const [first, setFirst] = useState(true);
@@ -29,7 +31,7 @@ export default function JaydenPrompt({
     >
       <Box sx={{ textAlign: "center" }}>
         <Image
-          src={first ? firstImage : secondImage}
+          src={error ? errorJayden : first ? firstImage : secondImage}
           alt="Jayden"
           height={400}
           width={400}

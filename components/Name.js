@@ -9,6 +9,7 @@ import { MyTextField } from "./MyTextField";
 import styles from "../styles/pages.module.css";
 import jayden1 from "../assets/images/WelcomeTransparent.png";
 import jayden2 from "../assets/images/Select2Transparent.png";
+import errorJayden from "../assets/images/DissapointedTransparent.png";
 
 export default function Name({ goPrev, goNext, slide, name, setName }) {
   return (
@@ -25,6 +26,8 @@ export default function Name({ goPrev, goNext, slide, name, setName }) {
           firstImage={jayden1}
           secondImage={jayden2}
           timing={9700}
+          error={name.error ? true : false}
+          errorJayden={errorJayden}
         />
         <Stack className={styles.textbox}>
           <MyTextField
