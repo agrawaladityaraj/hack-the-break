@@ -96,7 +96,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Roboto Mono";
-  background-color: #fff4ec;
+  background-color: #fff4ec !important;
 }
 
 mark {
