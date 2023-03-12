@@ -18,6 +18,8 @@ import { Trail } from "./Trail";
 import styles from "../styles/pages.module.css";
 import jayden1 from "../assets/images/ShockedTransparent.png";
 import jayden2 from "../assets/images/PontificateTransparent.png";
+import errorJayden from "../assets/images/SeriousTransparent.png";
+import { ErrorRounded } from "@mui/icons-material";
 
 export default function Overview({
   goPrev,
@@ -40,6 +42,8 @@ export default function Overview({
           firstImage={jayden1}
           secondImage={jayden2}
           timing={3000}
+          error={false}
+          errorJayden={errorJayden}
         />
         <Stack spacing={3} className={styles.textbox}>
           <MyCard>
