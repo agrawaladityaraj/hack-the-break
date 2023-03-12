@@ -1,10 +1,11 @@
 import React from "react";
-import { Stack, AccordionDetails, IconButton } from "@mui/material";
+import { Stack, AccordionDetails, IconButton, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import PrevNext from "./PrevNext";
 import JaydenPrompt from "./JaydenPrompt";
+import RTE from "./RTE";
 import { Trail } from "./Trail";
 import { MyTextField } from "./MyTextField";
 import { MyButton } from "./MyButton";
@@ -32,6 +33,14 @@ export default function Outline({
           open={slide == 3}
         />
         <Stack spacing={3} className={styles.textbox}>
+          {!outline.value.length && (
+            <h4 style={{ textAlign: "center" }}>
+              <b>
+                No stages! What are you doing??? That’s like trying to walk
+                without taking any steps!
+              </b>
+            </h4>
+          )}
           <Stack>
             {outline.value.map((item, index) => (
               <Accordion disableGutters elevation={0} key={index}>
@@ -64,7 +73,24 @@ export default function Outline({
                     </IconButton>
                   </div>
                 </AccordionSummary>
-                <AccordionDetails></AccordionDetails>
+                <AccordionDetails>
+                  <RTE
+                    content={item}
+                    setContent={(content) =>
+                      setOutline({
+                        ...outline,
+                        value: [
+                          ...outline.value.slice(0, index),
+                          content,
+                          ...outline.value.slice(
+                            index + 1,
+                            outline.value.length
+                          ),
+                        ],
+                      })
+                    }
+                  />
+                </AccordionDetails>
               </Accordion>
             ))}
           </Stack>
@@ -73,11 +99,16 @@ export default function Outline({
             startIcon={<AddIcon />}
             fullWidth
             onClick={() =>
-              setOutline({ ...outline, value: [...outline.value, ""] })
+              setOutline({ error: "", value: [...outline.value, ""] })
             }
           >
             Add Stage
           </MyButton>
+          {outline.error && (
+            <Typography color="error" variant="subtitle2">
+              {outline.error}
+            </Typography>
+          )}
         </Stack>
         <PrevNext goPrev={goPrev} goNext={goNext} />
       </div>
