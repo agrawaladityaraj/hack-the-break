@@ -11,6 +11,7 @@ import { Trail } from "./Trail";
 import styles from "../styles/pages.module.css";
 import jayden1 from "../assets/images/SurprisedTransparent.png";
 import jayden2 from "../assets/images/ThatCouldWorkTransparent.png";
+import errorJayden from "../assets/images/SurprisedTransparent.png";
 
 const data = [
   {
@@ -130,6 +131,8 @@ export default function TechSack({
           firstImage={jayden1}
           secondImage={jayden2}
           timing={3000}
+          error={technologies.error ? true : false}
+          errorJayden={errorJayden}
         />
         <Stack spacing={3} className={styles.textbox}>
           <Stack>
