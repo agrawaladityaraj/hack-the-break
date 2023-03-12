@@ -29,7 +29,13 @@ export default function Home() {
         <Welcome goNext={() => setSlide(1)} slide={slide} />
         <Name
           goPrev={() => setSlide(0)}
-          goNext={() => setSlide(2)}
+          goNext={() => {
+            if (!name.value) {
+              setName({ ...name, error: "Name cannot be empty!" });
+            } else {
+              setSlide(2);
+            }
+          }}
           slide={slide}
           name={name}
           setName={setName}
