@@ -70,7 +70,10 @@ export default function Home() {
           goPrev={() => setSlide(2)}
           goNext={() => {
             if (!outline.value.length) {
-              setOutline({ ...outline, error: "You need atleast one stage!" });
+              setOutline({
+                ...outline,
+                error: "You need atleast one stage! *Sigh*",
+              });
             } else {
               setSlide(4);
             }
