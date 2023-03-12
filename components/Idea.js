@@ -8,28 +8,30 @@ import { MyTextField } from "./MyTextField";
 
 import styles from "../styles/pages.module.css";
 
-export default function Name({ goPrev, goNext, slide, name, setName }) {
+export default function Idea({ goPrev, goNext, slide, idea, setIdea }) {
   return (
     <div className={styles.container}>
       <div className={styles.verticalCentre}>
-        <Trail open={slide == 1}>
-          <span className={styles.major}>Project Name?</span>
+        <Trail open={slide == 2}>
+          <span className={styles.major}>Project Idea?</span>
         </Trail>
         <JaydenPrompt
           text={
-            "I like names! Names are fun and the first step to creating something beautiful, or ugly. Let’s come up with a name!"
+            "OK! No funny business… Describe your project idea to me. I like to think about who my target audience is and the goals!"
           }
-          open={slide == 1}
+          open={slide == 2}
         />
         <Stack className={styles.textbox}>
           <MyTextField
             variant="outlined"
             fullWidth
-            value={name.value}
-            onChange={(e) => setName({ value: e.target.value, error: "" })}
-            label={name.value ? "" : "Name"}
-            error={name.error ? true : false}
-            helperText={name.error}
+            value={idea.value}
+            onChange={(e) => setIdea({ value: e.target.value, error: "" })}
+            label={idea.value ? "" : "Idea"}
+            error={idea.error ? true : false}
+            helperText={idea.error}
+            rows={4}
+            multiline
           />
         </Stack>
         <PrevNext goPrev={goPrev} goNext={goNext} />

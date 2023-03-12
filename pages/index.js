@@ -4,10 +4,12 @@ import SwipeableViews from "react-swipeable-views";
 
 import Welcome from "../components/Welcome";
 import Name from "../components/Name";
+import Idea from "../components/Idea";
 
 export default function Home() {
   const [slide, setSlide] = useState(0);
   const [name, setName] = useState({ value: "", error: "" });
+  const [idea, setIdea] = useState({ value: "", error: "" });
 
   return (
     <>
@@ -39,6 +41,19 @@ export default function Home() {
           slide={slide}
           name={name}
           setName={setName}
+        />
+        <Idea
+          goPrev={() => setSlide(1)}
+          goNext={() => {
+            if (!idea.value) {
+              setIdea({ ...idea, error: "Idea cannot be empty!" });
+            } else {
+              setSlide(3);
+            }
+          }}
+          slide={slide}
+          idea={idea}
+          setIdea={setIdea}
         />
       </SwipeableViews>
     </>
