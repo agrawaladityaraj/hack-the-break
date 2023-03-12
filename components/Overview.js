@@ -7,6 +7,8 @@ import {
   AccordionDetails,
 } from "@mui/material";
 import ReactHtmlParser from "react-html-parser";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import DoneIcon from "@mui/icons-material/Done";
 
 import PrevNext from "./PrevNext";
 import JaydenPrompt from "./JaydenPrompt";
@@ -14,6 +16,7 @@ import { Accordion, AccordionSummary } from "./MyAccordion";
 import { MyCard } from "./MyCard";
 import { MyChip } from "./MyChip";
 import { Trail } from "./Trail";
+import { MyButton } from "./MyButton";
 
 import styles from "../styles/pages.module.css";
 import jayden1 from "../assets/images/ShockedTransparent.png";
@@ -101,7 +104,31 @@ export default function Overview({
             </CardContent>
           </MyCard>
         </Stack>
-        <PrevNext goPrev={goPrev} goNext={goNext} />
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          <MyButton
+            variant="contained"
+            startIcon={<ArrowBackIosIcon />}
+            disableElevation
+            onClick={goPrev}
+          >
+            Previous
+          </MyButton>
+          <MyButton
+            variant="contained"
+            endIcon={<DoneIcon />}
+            disableElevation
+            onClick={goNext}
+          >
+            Finish
+          </MyButton>
+        </Box>
       </div>
     </div>
   );

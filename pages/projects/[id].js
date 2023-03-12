@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import SwipeableViews from "react-swipeable-views";
 import { createClient } from "@supabase/supabase-js";
@@ -76,7 +75,7 @@ export default function Project() {
         easeFunction: "cubic-bezier(0.18, 0.3, 0.25, 1)",
       }}
     >
-      <Welcome goNext={() => setSlide(1)} slide={slide} />
+      <Welcome goNext={() => setSlide(1)} slide={slide} edit />
       <Name
         goPrev={() => setSlide(0)}
         goNext={() => {

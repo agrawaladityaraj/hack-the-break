@@ -60,6 +60,10 @@ export default function Projects() {
                       backgroundColor: "#ef8354",
                       boxShadow: "10px 10px black",
                       textDecoration: "none",
+                      "&:hover": {
+                        color: "#FFF4EC",
+                        backgroundColor: "#52796F",
+                      },
                     }}
                   >
                     <Typography variant="h4">
@@ -82,6 +86,10 @@ export default function Projects() {
                     backgroundColor: "#52796F",
                     boxShadow: "10px 10px black",
                     textDecoration: "none",
+                    "&:hover": {
+                      color: "black",
+                      backgroundColor: "#ef8354",
+                    },
                   }}
                 >
                   <Typography variant="h4">

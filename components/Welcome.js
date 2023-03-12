@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Stack, Box } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import WindowIcon from "@mui/icons-material/Window";
+import EditIcon from "@mui/icons-material/Edit";
 import { TypeAnimation } from "react-type-animation";
 
 import { Trail } from "./Trail";
@@ -10,7 +14,7 @@ import { MyButton } from "./MyButton";
 import styles from "../styles/pages.module.css";
 import dog from "../assets/images/Untitled_Artwork.png";
 
-export default function Welcome({ goNext, slide }) {
+export default function Welcome({ goNext, slide, edit = false }) {
   const [visited, setVisited] = useState(false);
 
   useEffect(() => {
@@ -72,14 +76,32 @@ export default function Welcome({ goNext, slide }) {
             </Stack>
           </Stack>
         </Stack>
-        <MyButton
-          variant="contained"
-          endIcon={<ArrowForwardIosIcon />}
-          disableElevation
-          onClick={goNext}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+          }}
         >
-          Get Started
-        </MyButton>
+          <MyButton
+            variant="contained"
+            startIcon={edit ? <ArrowBackIosIcon /> : <WindowIcon />}
+            disableElevation
+            LinkComponent={Link}
+            href="/projects"
+          >
+            {edit ? "Back to Projects" : "See Projects"}
+          </MyButton>
+          <MyButton
+            variant="contained"
+            endIcon={edit ? <EditIcon /> : <ArrowForwardIosIcon />}
+            disableElevation
+            onClick={goNext}
+          >
+            {edit ? "Edit Project" : "Get Started"}
+          </MyButton>
+        </Box>
       </div>
     </div>
   );
