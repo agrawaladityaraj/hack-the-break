@@ -68,7 +68,7 @@ export default function Outline({
           open={slide == 3}
           firstImage={jayden1}
           secondImage={jayden2}
-          timing={11200}
+          timing={12000}
         />
         <Stack spacing={3} className={styles.textbox}>
           <Stack>

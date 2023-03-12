@@ -129,7 +129,7 @@ export default function TechSack({
           open={slide == 4}
           firstImage={jayden1}
           secondImage={jayden2}
-          timing={4000}
+          timing={3000}
         />
         <Stack spacing={3} className={styles.textbox}>
           <Stack>

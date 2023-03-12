@@ -6,7 +6,6 @@ import {
   CardContent,
   AccordionDetails,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
 import ReactHtmlParser from "react-html-parser";
 
 import PrevNext from "./PrevNext";
@@ -17,6 +16,8 @@ import { MyChip } from "./MyChip";
 import { Trail } from "./Trail";
 
 import styles from "../styles/pages.module.css";
+import jayden1 from "../assets/images/ShockedTransparent.png";
+import jayden2 from "../assets/images/PontificateTransparent.png";
 
 export default function Overview({
   goPrev,
@@ -36,6 +37,9 @@ export default function Overview({
         <JaydenPrompt
           text={"I maked this for you? Does it look good?"}
           open={slide == 5}
+          firstImage={jayden1}
+          secondImage={jayden2}
+          timing={3000}
         />
         <Stack spacing={3} className={styles.textbox}>
           <MyCard>
