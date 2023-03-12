@@ -1,0 +1,44 @@
+.trailsText {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  line-height: 80px;
+  font-size: 6em;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+
+.trailsText > div {
+  padding-right: 0.05em;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  padding: 2rem;
+}
+
+.verticalCentre {
+  position: "absolute";
+  top: 50%;
+  margin: 0;
+  max-width: 1000px;
+}
+
+.major {
+  color: #ef8354;
+  -webkit-text-stroke: 2px black;
+}
+
+.textbox {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+}
