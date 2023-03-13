@@ -36,3 +36,7 @@ Throughout the development of our web application, we learned a lot about what i
 Overall, we are proud of what we were able to accomplish with Project Buddy, and believe that our platform has the potential to make a positive impact on individuals' project work for building their resume. We hope to add more animations and fun text to various other job-seeking challenges that people face. We would like users to have more experience with Hoppa in challenges such as interview practice and resume writing.
 
 We are grateful for the opportunity to participate in Hack the Break and develop Project Buddy using a range of innovative tools and resources. Thank you for taking the time to check out our project!
+
+## Links
+Devpost: https://devpost.com/software/project-buddy-d3pczu
+YouTube Video: https://youtu.be/1qL-ANmQ8J8
