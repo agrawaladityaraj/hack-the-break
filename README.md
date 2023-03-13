@@ -38,5 +38,5 @@ Overall, we are proud of what we were able to accomplish with Project Buddy, and
 We are grateful for the opportunity to participate in Hack the Break and develop Project Buddy using a range of innovative tools and resources. Thank you for taking the time to check out our project!
 
 ## Links
-Devpost: https://devpost.com/software/project-buddy-d3pczu
-YouTube Video: https://youtu.be/1qL-ANmQ8J8
+- Devpost: https://devpost.com/software/project-buddy-d3pczu
+- YouTube Video: https://youtu.be/1qL-ANmQ8J8
