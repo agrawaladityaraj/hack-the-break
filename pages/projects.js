@@ -26,7 +26,13 @@ export default function Projects() {
       (async () => {
         try {
           let res = await supabase.from("projects").select("*");
-          setProjects(res.data);
+          setProjects(
+            res.data.map((project) => ({
+              ...project,
+              outline: JSON.parse(project.outline),
+              technologies: JSON.parse(project.technologies),
+            }))
+          );
           setLoading(false);
         } catch (error) {
           console.error(error);

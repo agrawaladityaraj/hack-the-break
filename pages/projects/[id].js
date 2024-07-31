@@ -33,8 +33,11 @@ export default function Project() {
           if (res.data.length) {
             setName({ value: res.data[0].name, error: "" });
             setIdea({ value: res.data[0].idea, error: "" });
-            setOutline({ value: res.data[0].outline, error: "" });
-            setTechnologies({ value: res.data[0].technologies, error: "" });
+            setOutline({ value: JSON.parse(res.data[0].outline), error: "" });
+            setTechnologies({
+              value: JSON.parse(res.data[0].technologies),
+              error: "",
+            });
           }
         } catch (error) {
           console.error(error);
@@ -54,8 +57,8 @@ export default function Project() {
           {
             name: name.value,
             idea: idea.value,
-            outline: outline.value,
-            technologies: technologies.value,
+            outline: JSON.stringify(outline.value),
+            technologies: JSON.stringify(technologies.value),
           },
         ])
         .eq("id", id);

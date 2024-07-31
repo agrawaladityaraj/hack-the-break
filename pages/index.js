@@ -30,8 +30,8 @@ export default function Home() {
         {
           name: name.value,
           idea: idea.value,
-          outline: outline.value,
-          technologies: technologies.value,
+          outline: JSON.stringify(outline.value),
+          technologies: JSON.stringify(technologies.value),
         },
       ]);
       router.push("/projects");
